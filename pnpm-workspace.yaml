@@ -1,0 +1,16 @@
+# Réglages pnpm du projet (depuis pnpm 11, ils ne vont plus dans .npmrc)
+
+# Dépendances autorisées à exécuter un script d'installation.
+# Si l'installation échoue avec ERR_PNPM_IGNORED_BUILDS,
+# lance « pnpm approve-builds » : la liste sera complétée ici.
+allowBuilds:
+  esbuild: true
+  workerd: true
+  sharp: true
+  '@parcel/watcher': true
+  unrs-resolver: true
+  vue-demi: true
+
+# Ne pas installer une version publiée il y a moins de 24 h
+# (valeur par défaut, écrite ici pour qu'elle soit visible)
+minimumReleaseAge: 1440

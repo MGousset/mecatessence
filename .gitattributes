@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+*.glb binary
+*.blend binary
+*.ply binary
+*.spz binary
+*.splat binary
+*.png binary
+*.jpg binary
+*.webp binary
+*.pdf binary
+
+server/db/migrations/** linguist-generated=true

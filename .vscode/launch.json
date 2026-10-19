@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Serveur : Nuxt",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/node_modules/nuxt/bin/nuxt.mjs",
+      "args": ["dev"]
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Client : Chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full stack : Nuxt",
+      "configurations": ["Serveur : Nuxt", "Client : Chrome"]
+    }
+  ]
+}

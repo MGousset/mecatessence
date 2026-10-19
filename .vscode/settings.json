@@ -1,0 +1,76 @@
+{
+  // Les tâches de type "npm" passent par pnpm
+  "npm.packageManager": "pnpm",
+
+  // ESLint formate et corrige à l'enregistrement (pas de Prettier)
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+  "eslint.validate": ["javascript", "typescript", "vue"],
+  // Les erreurs de style sont corrigées automatiquement, inutile de les souligner
+  "eslint.rules.customizations": [
+    { "rule": "@stylistic/*", "severity": "off", "fixable": true }
+  ],
+
+  // Tailwind v4 + Nuxt UI
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.classFunctions": ["defineAppConfig"],
+  "[vue]": {
+    "editor.wordWrap": "on"
+  },
+
+  // TypeScript du projet plutôt que celui de VS Code
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+
+  // Autocomplétion et validation des fiches mission
+  "json.schemas": [
+    {
+      "fileMatch": ["/shared/missions/**/*.json"],
+      "url": "./schemas/mission.schema.json"
+    }
+  ],
+
+  // Dossiers générés : hors recherche et hors surveillance
+  "search.exclude": {
+    "**/.nuxt": true,
+    "**/.output": true,
+    "**/.data": true,
+    "**/.wrangler": true,
+    "**/server/db/migrations": true,
+    "pnpm-lock.yaml": true
+  },
+  "files.watcherExclude": {
+    "**/.nuxt/**": true,
+    "**/.output/**": true,
+    "**/.data/**": true,
+    "**/.wrangler/**": true
+  },
+
+  // Explorateur plus lisible
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "pnpm-lock.yaml, pnpm-workspace.yaml, .node-version, .npmrc",
+    "nuxt.config.ts": "app.config.ts, eslint.config.mjs, tsconfig.json, .editorconfig",
+    ".gitignore": ".gitattributes",
+    ".env.example": ".env"
+  },
+
+  // Correcteur orthographique en français et en anglais
+  "cSpell.language": "fr,en",
+  "cSpell.words": [
+    "mecanix", "nuxt", "nuxthub", "nitro", "drizzle", "wrangler", "uppy",
+    "turnstile", "resend", "splat", "splats", "aruco", "photogrammetrie",
+    "movano", "interstar", "autodoc", "polyform", "dci", "vehicule",
+    "contrib", "otp", "iconify", "lucide"
+  ]
+}

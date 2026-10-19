@@ -1,0 +1,1 @@
+Signature du CLA obligatoire, conventions de nommage (Disque_AvG…), une PR par fiche mission, valide: false par défaut

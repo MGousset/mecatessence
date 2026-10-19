@@ -1,0 +1,98 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Nuxt : dev",
+      "type": "npm",
+      "script": "dev",
+      "isBackground": true,
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "panel": "dedicated", "reveal": "always" },
+      "problemMatcher": {
+        "owner": "nuxt",
+        "pattern": { "regexp": "^NEVER_MATCH$" },
+        "background": {
+          "activeBegin": true,
+          "beginsPattern": "Nuxt",
+          "endsPattern": "Local:"
+        }
+      }
+    },
+    {
+      "label": "Qualité : lint",
+      "type": "npm",
+      "script": "lint",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Qualité : lint + correction",
+      "type": "npm",
+      "script": "lint:fix",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Qualité : typecheck",
+      "type": "npm",
+      "script": "typecheck",
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "Qualité : tout vérifier (comme la CI)",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Qualité : lint", "Qualité : typecheck"],
+      "problemMatcher": []
+    },
+    {
+      "label": "DB : générer une migration",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["nuxt", "db", "generate", "--name", "${input:nomMigration}"],
+      "problemMatcher": []
+    },
+    {
+      "label": "DB : appliquer les migrations",
+      "type": "npm",
+      "script": "db:migrate",
+      "problemMatcher": []
+    },
+    {
+      "label": "DB : requête SQL",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["nuxt", "db", "sql", "${input:requeteSql}"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build : prévisualiser la version Workers",
+      "type": "shell",
+      "command": "pnpm build && pnpm preview",
+      "problemMatcher": []
+    },
+    {
+      "label": "Cloudflare : logs de production",
+      "type": "npm",
+      "script": "cf:logs",
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Nuxt : nettoyer les caches",
+      "type": "npm",
+      "script": "cleanup",
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "nomMigration",
+      "type": "promptString",
+      "description": "Nom de la migration (ex. ajout_table_piece)"
+    },
+    {
+      "id": "requeteSql",
+      "type": "promptString",
+      "description": "Requête SQL",
+      "default": "SELECT id, mission_code, statut FROM contribution ORDER BY cree_le DESC LIMIT 20"
+    }
+  ]
+}

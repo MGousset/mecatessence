@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+    open-pull-requests-limit: 5
+    groups:
+      nuxt:
+        patterns: ["nuxt", "@nuxt/*", "@nuxthub/*", "@nuxtjs/*", "vue", "vue-tsc"]
+      uppy:
+        patterns: ["@uppy/*"]
+      auth-db:
+        patterns: ["better-auth", "drizzle-orm", "drizzle-kit"]
+      cloudflare:
+        patterns: ["wrangler", "@cloudflare/*"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

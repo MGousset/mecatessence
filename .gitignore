@@ -1,0 +1,62 @@
+# Dépendances
+node_modules/
+
+# Nuxt / Nitro / NuxtHub
+.nuxt/
+.output/
+.nitro/
+.cache/
+.data/
+dist/
+
+# Cloudflare
+.wrangler/
+.dev.vars
+.dev.vars.*
+
+# Secrets (seul le modèle .env.example est versionné)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs et caches
+logs/
+*.log
+npm-debug.log*
+.eslintcache
+
+# Tests
+coverage/
+test-results/
+playwright-report/
+
+# Système et éditeurs
+.DS_Store
+Thumbs.db
+.idea/
+*.swp
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Sauvegardes Blender
+*.blend1
+*.blend2
+
+# Références privées : ne JAMAIS publier
+# (photos Autodoc, extraits de RTA, vidéos brutes, captures)
+/prive/
+/captures/
+*.mp4
+*.mov
+*.MOV
+*.heic
+*.HEIC
+
+# pnpm
+.pnpm-store/
+.pnpm-debug.log*

@@ -1,0 +1,21 @@
+{
+  "recommendations": [
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "antfu.iconify",
+    "editorconfig.editorconfig",
+    "yoavbls.pretty-ts-errors",
+    "usernamehw.errorlens",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-french",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "mikestead.dotenv",
+    "qwtel.sqlite-viewer"
+  ],
+  "unwantedRecommendations": [
+    "octref.vetur",
+    "esbenp.prettier-vscode"
+  ]
+}
