@@ -16,6 +16,11 @@ updates:
         patterns: ["better-auth", "drizzle-orm", "drizzle-kit"]
       cloudflare:
         patterns: ["wrangler", "@cloudflare/*"]
+      npm:
+        ignore:
+          # TS 7 casse vue-tsc 3.x : on attend Vue Language Tools v4
+          - dependency-name: typescript
+            update-types: ['version-update:semver-major']
 
   - package-ecosystem: github-actions
     directory: /
